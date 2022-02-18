@@ -16,7 +16,7 @@ class Actor:
         _velocity (Point): The speed and direction.
     """
 
-    def __init__(self, text = ""):
+    def __init__(self, text="", reset=False):
         """Constructs a new Actor."""
         self._text = text
         self._font_size = 15
@@ -24,6 +24,8 @@ class Actor:
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
         self._acceleration = Point(0, 0)
+        self._reset_vel_on_wrap = reset
+        self._initial_velocity = self._velocity
 
     def get_color(self):
         """Gets the actor's color as a tuple of three ints (r, g, b).
@@ -83,8 +85,15 @@ class Actor:
         """
         self._velocity.add(self._acceleration)
         
+        if self._reset_vel_on_wrap:
+            if x > max_x:
+                self._velocity._x = self._initial_velocity.get_x()
+            if y > max_y:
+                self._velocity._y = self._initial_velocity.get_y()
+        
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
         y = (self._position.get_y() + self._velocity.get_y()) % max_y
+        
         self._position = Point(x, y)
 
     def set_color(self, color):

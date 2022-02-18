@@ -1,7 +1,8 @@
 from actor import Actor
+from point import Point
 
 class Rock(Actor):
     def __init__(self):
         super().__init__("O")
-        self._acceleration = -1
+        self.set_acceleration(Point(0, -1))
         
