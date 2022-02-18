@@ -1,6 +1,6 @@
-from projectile import Projectile
+from actor import Actor
 
-class Gem(Projectile):
+class Gem(Actor):
     def __init__(self):
         super().__init__('*')
 

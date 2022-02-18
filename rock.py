@@ -1,6 +1,6 @@
-from projectile import Projectile
+from actor import Actor
 
-class Rock(Projectile):
+class Rock(Actor):
     def __init__(self):
         super().__init__("O")
         
