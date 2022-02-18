@@ -1,6 +1,7 @@
 from point import Point
 from keyboard_service import KeyboardService
 from video_service import VideoService
+from actor import Actor
 
 ''' 
     File: player.py
@@ -9,12 +10,13 @@ from video_service import VideoService
 '''
 
 # Inherit projectile class?
-class Player():
+class Player(Actor):
     '''
         Keep track of the player's movement's and points
     '''
-    def __init__():
-        pass
+    def __init__(self):
+        super().__init__()
+        self._score = 0
 
     def score(self):
         pass
