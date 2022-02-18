@@ -73,8 +73,9 @@ class Actor:
         """
     
     def move_next(self, max_x, max_y):
-        """Moves the actor to its next position according to its velocity. Will wrap the position 
-        from one side of the screen to the other when it reaches the given maximum x and y values.
+        """Moves the actor to its next position according to its velocity and acceleration. Will 
+        wrap the position from one side of the screen to the other when it reaches the given 
+        maximum x and y values.
         
         Args:
             max_x (int): The maximum x value.
