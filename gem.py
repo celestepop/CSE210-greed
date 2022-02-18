@@ -1,9 +1,9 @@
 from projectile import Projectile
 
 class Gem(Projectile):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__('*')
 
-test = Gem('*')
+test = Gem()
 
 print(test.get_text())

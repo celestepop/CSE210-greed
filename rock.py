@@ -1,10 +1,6 @@
 from projectile import Projectile
 
 class Rock(Projectile):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__("O")
         
-
-test = Rock("O")
-
-print(test.get_text())
