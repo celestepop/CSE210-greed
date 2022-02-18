@@ -1,5 +1,6 @@
 from point import Point
-from 
+from keyboard_service import KeyboardService
+from video_service import VideoService
 
 ''' 
     File: player.py
