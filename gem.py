@@ -1,5 +1,11 @@
 from projectile import Projectile
 
+'''
+    File: gem.py
+    Author:
+    Description:
+'''
+
 class Gem(Projectile):
     def __init__(self):
         super().__init__('*')

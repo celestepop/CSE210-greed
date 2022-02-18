@@ -1,6 +1,12 @@
 from point import Point
 from color import Color
 
+'''
+    File: projectile.py
+    Author:
+    Description:
+'''
+
 class Projectile():
 
     def __init__(self, text):
