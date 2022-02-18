@@ -18,11 +18,5 @@ class Player(Actor):
         super().__init__()
         self._score = 0
 
-    def score(self):
-        pass
-
-    def get_position(self):
-        pass
-
-    def set_position(self):
-        pass
+    def get_score(self):
+        return self._score
