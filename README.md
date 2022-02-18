@@ -1,5 +1,7 @@
 # CSE210-greed
 
+Authors: Darcy Merilan, Julie Cowley, Celeste Popoca, Daniel Loveless
+
 keyboard_service.py,
 color.py,
 point.py,
