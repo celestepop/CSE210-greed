@@ -1,3 +1,6 @@
+from keyboard_service import KeyboardService
+from video_service import VideoService
+
 class Director:
     """A person who directs the game. 
     
@@ -15,8 +18,8 @@ class Director:
             keyboard_service (KeyboardService): An instance of KeyboardService.
             video_service (VideoService): An instance of VideoService.
         """
-        self._keyboard_service = keyboard_service
-        self._video_service = video_service
+        self._keyboard_service = KeyboardService()
+        self._video_service = VideoService()
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
