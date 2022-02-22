@@ -12,3 +12,7 @@ Classes:
 Player,
 Projectile,
 Director,
+Actor,
+cast,
+rock,
+gem
