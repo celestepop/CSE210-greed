@@ -1,7 +1,6 @@
 from actor import Actor
 from point import Point
 
-<<<<<<< HEAD
 '''
     File: gem.py
     Author:
