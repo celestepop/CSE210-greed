@@ -6,9 +6,12 @@ from projectile import Projectile
     Description:
 '''
 
+
+'''Basically creates a gem as a * in the code, inhertiets from the projectile class'''
 class Gem(Projectile):
     def __init__(self):
-        super().__init__('*')
+        super().__init__('*') 
+        
 
 test = Gem()
 
