@@ -14,6 +14,7 @@ class Actor:
         _color (Color): The color of the text.
         _position (Point): The screen coordinates.
         _velocity (Point): The speed and direction.
+        _acceleration (Point): The rate of change of velocity.
     """
 
     def __init__(self, text="", reset=False):
