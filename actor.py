@@ -84,14 +84,17 @@ class Actor:
             max_x (int): The maximum x value.
             max_y (int): The maximum y value.
         """
+        # Increment velocity given acceleration
         self._velocity.add(self._acceleration)
         
+        # Adjust velocity based on wrap settings
         if self._reset_vel_on_wrap:
             if x > max_x:
                 self._velocity._x = self._initial_velocity.get_x()
             if y > max_y:
                 self._velocity._y = self._initial_velocity.get_y()
         
+        # Update position and wrap if on edge
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
         y = (self._position.get_y() + self._velocity.get_y()) % max_y
         
