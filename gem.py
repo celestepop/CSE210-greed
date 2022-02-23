@@ -9,10 +9,6 @@ from point import Point
 
 
 '''Basically creates a gem as a * in the code, inhertiets from the projectile class'''
-class Gem(Projectile):
-    def __init__(self):
-        super().__init__('*') 
-        
 
 class Gem(Actor):
     def __init__(self):
