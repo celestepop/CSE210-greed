@@ -9,7 +9,6 @@ from actor import Actor
     Description:
 '''
 
-# Inherit projectile class?
 class Player(Actor):
     '''
         Keep track of the player's movement's and points
