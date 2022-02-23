@@ -3,6 +3,8 @@
 Authors: Darcy Merilan, Julie Cowley, Celeste Popoca, Daniel Loveless
 
 keyboard_service.py,
+actor.py,
+cast.py,
 color.py,
 point.py,
 & video_services.py
