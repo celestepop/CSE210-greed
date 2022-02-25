@@ -55,7 +55,7 @@ def main():
         b = random.randint(0, 255)
         color = Color(r, g, b)
         
-
+        #if n is even make a gem, else make a rock
         if n%2 == 0:
             text = '*'
             gem = Gem()
