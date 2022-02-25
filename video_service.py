@@ -107,3 +107,9 @@ class VideoService:
             pyray.draw_line(0, y, self._width, y, pyray.GRAY)
         for x in range(0, self._width, self._cell_size):
             pyray.draw_line(x, 0, x, self._height, pyray.GRAY)
+
+    def print_score(self, score):
+        white = Color(255, 255, 255)
+        color = white.to_tuple()
+        display = f'Score: {score}'
+        pyray.draw_text(display, 50, 50, 30, color)

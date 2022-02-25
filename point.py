@@ -1,3 +1,6 @@
+
+COLLIDE_RANGE = 20
+
 class Point:
     """A distance from a relative origin (0, 0).
 
@@ -42,6 +45,13 @@ class Point:
             boolean: True if both x and y are equal; false if otherwise.
         """
         return self._x == other.get_x() and self._y == other.get_y()
+
+    def collides(self, other):
+        if self._x <= other.get_x() + COLLIDE_RANGE/2 and self._x >= other.get_x() - COLLIDE_RANGE/2:
+            if self._y <= other.get_y() + COLLIDE_RANGE/2 and self._y >= other.get_y() - COLLIDE_RANGE/2:
+                return True
+        else:
+            return False
 
     def get_x(self):
         """Gets the horizontal distance.

@@ -1,5 +1,12 @@
-from keyboard_service import KeyboardService
-from video_service import VideoService
+import random
+from color import Color
+from point import Point
+
+MAX_X = 900
+MAX_Y = 600
+CELL_SIZE = 15
+COLS = 60
+ROWS = 40
 
 class Director:
     """A person who directs the game. 
@@ -20,6 +27,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        self._score = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -50,18 +58,43 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
-        # banner = cast.get_first_actor("banners")
+        #get the player (robot) and projectiles
         robot = cast.get_first_actor("player")
         artifacts = cast.get_actors("artifacts")
 
-        # banner.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
         
+        #update rock and gem positions and see if the player collides with anything
         for artifact in artifacts:
-            if robot.get_position().equals(artifact.get_position()):
+            artifact.move_next(max_x, max_y)
+            if robot.get_position().collides(artifact.get_position()):
+                #adjust score
+                if artifact.get_text() == '*':
+                    self._score += 10
+                elif artifact.get_text() == 'o':
+                    self._score -= 10
+
+                #remove the old artifact from the cast
                 cast.remove_actor("artifacts", artifact)
+
+                #reset the artifact to a random position/color
+                x = random.randint(1, COLS - 1)
+                y = MAX_Y
+                position = Point(x, y)
+                position = position.scale(CELL_SIZE)
+
+                r = random.randint(0, 255)
+                g = random.randint(0, 255)
+                b = random.randint(0, 255)
+                color = Color(r, g, b)
+
+                artifact.set_position(position)
+                artifact.set_color(color)
+
+                #add the artifact back into the cast
+                cast.add_actor("artifacts", artifact)
                    
         
     def _do_outputs(self, cast):
@@ -74,3 +107,4 @@ class Director:
         actors = cast.get_all_actors()
         self._video_service.draw_actors(actors)
         self._video_service.flush_buffer()
+        self._video_service.print_score(self._score)
