@@ -1,5 +1,5 @@
 import pyray
-
+from color import Color
 
 class VideoService:
     """Outputs the game state. The responsibility of the class of objects is to draw the game state 
