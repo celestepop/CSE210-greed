@@ -5,8 +5,8 @@ from actor import Actor
 
 ''' 
     File: player.py
-    Author:
-    Description:
+    Author: Celeste Popoca
+    Description: Inherits from Actor and keeps track of the player's points. 
 '''
 
 class Player(Actor):
